@@ -1,0 +1,29 @@
+-------------------------------------------------------------------------------
+Test set: com.epam.QuestionsLibraryDaoImplTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 5.509 s <<< FAILURE! - in com.epam.QuestionsLibraryDaoImplTest
+viewAllTest  Time elapsed: 0.367 s  <<< ERROR!
+org.mockito.exceptions.misusing.PotentialStubbingProblem: 
+
+Strict stubbing argument mismatch. Please check:
+ - this invocation of 'createQuery' method:
+    entityManager.createQuery(
+    "select q from QuestionsLibrary q",
+    class com.epam.entity.QuestionsLibrary
+);
+    -> at com.epam.db.QuestionsLibraryOperationsDaoImpl.viewAll(QuestionsLibraryOperationsDaoImpl.java:36)
+ - has following stubbing(s) with different arguments:
+    1. entityManager.createQuery(
+    "Select t from QuestionsLibrary t"
+);
+      -> at com.epam.QuestionsLibraryDaoImplTest.viewAllTest(QuestionsLibraryDaoImplTest.java:69)
+Typically, stubbing argument mismatch indicates user mistake when writing tests.
+Mockito fails early so that you can debug potential problem easily.
+However, there are legit scenarios when this exception generates false negative signal:
+  - stubbing the same method multiple times using 'given().will()' or 'when().then()' API
+    Please use 'will().given()' or 'doReturn().when()' API for stubbing.
+  - stubbed method is intentionally invoked with different arguments by code under test
+    Please use default or 'silent' JUnit Rule (equivalent of Strictness.LENIENT).
+For more information see javadoc for PotentialStubbingProblem class.
+	at com.epam.QuestionsLibraryDaoImplTest.viewAllTest(QuestionsLibraryDaoImplTest.java:71)
+

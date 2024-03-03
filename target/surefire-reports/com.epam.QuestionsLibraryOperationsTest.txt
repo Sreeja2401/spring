@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.epam.QuestionsLibraryOperationsTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.102 s <<< FAILURE! - in com.epam.QuestionsLibraryOperationsTest
+addQuestionTest  Time elapsed: 0.107 s  <<< ERROR!
+java.lang.ClassCastException: class java.util.ArrayList cannot be cast to class com.epam.sl.QuestionsLibrary (java.util.ArrayList is in module java.base of loader 'bootstrap'; com.epam.sl.QuestionsLibrary is in unnamed module of loader 'app')
+	at com.epam.QuestionsLibraryOperationsTest.addQuestionTest(QuestionsLibraryOperationsTest.java:30)
+
